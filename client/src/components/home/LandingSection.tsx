@@ -318,13 +318,13 @@ const LandingSection: React.FC = () => {
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Hardware Support</h4>
               <p>High performance computation with Core i9 Processors, 32GB RAM, NVIDIA QUADRO GPUs with secured network access over SSH. Other than that we also provide hardware support for AR/VR, IOT and BCI Applications</p>
               <div className="flex flex-wrap gap-4 mt-4">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Intel Core i9" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="NVIDIA Quadro" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Raspberry Pi" className="w-12 h-12" />
-                <img src="https://drive.google.com/file/d/1SGZK4CuhgPWLxS7i8fhxz-Ovrl4558KU/view?usp=sharing" alt="OpenBCI" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Oculus" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Arduino" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Emotiv" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="Intel Core i9" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="NVIDIA Quadro" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="Raspberry Pi" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="OpenBCI" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="Oculus" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="Arduino" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="Emotiv" className="w-12 h-12" />
               </div>
             </motion.div>
             
@@ -338,10 +338,10 @@ const LandingSection: React.FC = () => {
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Software Support</h4>
               <p>Latest MATLAB support with complete toolkits as well full Anaconda distributions for Machine Learning and TensorFlow & PyTorch for Neural Networks and Deep Learning Applications</p>
               <div className="flex flex-wrap gap-4 mt-4">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="MATLAB" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="TensorFlow" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="PyTorch" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Anaconda" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="MATLAB" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="TensorFlow" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="PyTorch" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="Anaconda" className="w-12 h-12" />
               </div>
             </motion.div>
             
@@ -355,10 +355,10 @@ const LandingSection: React.FC = () => {
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Cloud Support</h4>
               <p>Cloud computing support with Google Colab Pro Notebooks and Oracle Cloud Infrastructure for scalable and efficient data processing and storage solutions.</p>
               <div className="flex flex-wrap gap-4 mt-4">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="MATLAB" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="TensorFlow" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="PyTorch" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Anaconda" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="MATLAB" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="TensorFlow" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="PyTorch" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="Anaconda" className="w-12 h-12" />
               </div>
             </motion.div>
             
@@ -372,10 +372,10 @@ const LandingSection: React.FC = () => {
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Knowledge Support</h4>
               <p>Professional body memberships along with MOOCS platform access for continuous learning and skill development in the latest technologies and methodologies.</p>
               <div className="flex flex-wrap gap-4 mt-4">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="MATLAB" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="TensorFlow" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="PyTorch" className="w-12 h-12" />
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Anaconda" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="MATLAB" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="TensorFlow" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="PyTorch" className="w-12 h-12" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg" alt="Anaconda" className="w-12 h-12" />
               </div>
             </motion.div>
           </div>
