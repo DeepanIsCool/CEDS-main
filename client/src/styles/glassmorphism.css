@@ -60,12 +60,13 @@
   left: -50%;
   background: radial-gradient(
     circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(58, 134, 255, 0.15) 0%,
-    rgba(131, 56, 236, 0.05) 40%,
-    transparent 60%
+    rgba(58, 134, 255, 0.3) 0%,
+    rgba(131, 56, 236, 0.15) 10%,  /* Changed from 20% to 10% */
+    transparent 25%                /* Reduced from 40% to 25% */
   );
   pointer-events: none;
   transition: opacity 0.3s;
+  filter: blur(8px);            /* Added blur for extra glow */
 }
 
 /* Glowing effect */
@@ -97,10 +98,11 @@
 .dark .interactive-bg::before {
   background: radial-gradient(
     circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(56, 189, 248, 0.2) 0%,
-    rgba(30, 58, 138, 0.1) 40%,
-    transparent 60%
+    rgba(56, 189, 248, 0.35) 0%,
+    rgba(30, 58, 138, 0.2) 10%,    /* Changed from 20% to 10% */
+    transparent 25%                /* Reduced from 40% to 25% */
   );
+  filter: blur(10px);             /* Added blur for extra glow */
 }
 
 /* Timeline */

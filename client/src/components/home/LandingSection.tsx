@@ -1,13 +1,46 @@
-import React, { useRef } from 'react';
+import { facultyData } from '@/data/facultyData';
+import { useMousePositionElement } from '@/hooks/useMousePosition';
 import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
 import { Link } from 'wouter';
 import { GlassPanel, GlowButton } from '../ui/glassmorphism';
-import { useMousePositionElement } from '@/hooks/useMousePosition';
 import FacultyCard from './FacultyCard';
-import { facultyData } from '@/data/facultyData';
 // import { Cloudinary } from 'cloudinary-core'; // Import Cloudinary
 
+// Define the glow animation variant
+const glowingCardVariant = {
+  initial: { 
+    boxShadow: '0 0 0 rgba(58, 134, 255, 0.3)' 
+  },
+  animate: { 
+    boxShadow: ['0 0 5px rgba(58, 134, 255, 0.3)', '0 0 20px rgba(58, 134, 255, 0.5)', '0 0 5px rgba(58, 134, 255, 0.3)'],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      repeatType: "reverse" as const
+    }
+  },
+  hover: {
+    boxShadow: '0 0 25px rgba(131, 56, 236, 0.6)',
+    scale: 1.05,
+    transition: { duration: 0.3 }
+  }
+};
 
+// Define a more intense glow for the hero image
+const heroGlowVariant = {
+  initial: { 
+    boxShadow: '0 0 0 rgba(58, 134, 255, 0.3)' 
+  },
+  animate: { 
+    boxShadow: ['0 0 10px rgba(58, 134, 255, 0.4)', '0 0 30px rgba(131, 56, 236, 0.6)', '0 0 10px rgba(58, 134, 255, 0.4)'],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      repeatType: "reverse" as const
+    }
+  }
+};
 
 const LandingSection: React.FC = () => {
   const bgRef = useRef<HTMLDivElement>(null);
@@ -99,11 +132,19 @@ const LandingSection: React.FC = () => {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="animate-float"
               >
-                <GlassPanel className="w-full h-auto rounded-xl shadow-xl relative z-10 overflow-hidden">
-                  <img 
+                <GlassPanel 
+                  className="w-full h-auto rounded-xl shadow-xl relative z-10 overflow-hidden"
+                  as={motion.div}
+                  initial="initial"
+                  animate="animate"
+                  variants={heroGlowVariant}
+                >
+                  <motion.img 
                     src="https://interestingengineering.com/_next/image?url=https%3A%2F%2Fimages.interestingengineering.com%2F2023%2F12%2F17%2Fimage%2Fjpeg%2FvuPe0eeWZY8i7TszVtG2RMMRLw14TK95viZVkOkX.jpg&w=1200&q=75" 
                     alt="Data visualization" 
                     className="w-full h-auto object-cover"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.3 }}
                   />
                 </GlassPanel>
               </motion.div>
@@ -119,12 +160,21 @@ const LandingSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-          <h2 className="text-3xl md:text-6xl font-sans font-bold mb-4">Leadership Team</h2> 
+          <h2 className="text-3xl md:text-6xl font-sans font-bold mb-4">Leadership Team</h2>
           </motion.h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {facultyData.map((faculty, index) => (
-              <FacultyCard key={faculty.id} faculty={faculty} index={index} />
+              <motion.div
+                key={faculty.id}
+                initial="initial"
+                animate="animate"
+                whileHover="hover"
+                variants={glowingCardVariant}
+                className="rounded-lg overflow-hidden"
+              >
+                <FacultyCard faculty={faculty} index={index} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -143,10 +193,10 @@ const LandingSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Creating Ecosystem</h4>
               <ul className="text-left list-disc list-inside">
@@ -161,10 +211,10 @@ const LandingSection: React.FC = () => {
             
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Fostering Collaboration</h4>
               <ul className="text-left list-disc list-inside">
@@ -176,10 +226,10 @@ const LandingSection: React.FC = () => {
             
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Enabling Entrepreneurship</h4>
               <ul className="text-left list-disc list-inside">
@@ -191,10 +241,10 @@ const LandingSection: React.FC = () => {
             
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Solution <br></br> Enabler</h4>
               <ul className=" text-left list-disc list-inside">
@@ -221,10 +271,10 @@ const LandingSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <svg className="w-12 h-12 mb-4 text-[#3A86FF]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z" />
@@ -236,10 +286,10 @@ const LandingSection: React.FC = () => {
             
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <svg className="w-12 h-12 mb-4 text-[#3A86FF]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z" />
@@ -251,10 +301,10 @@ const LandingSection: React.FC = () => {
             
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <svg className="w-12 h-12 mb-4 text-[#3A86FF]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z" />
@@ -266,10 +316,10 @@ const LandingSection: React.FC = () => {
             
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <svg className="w-12 h-12 mb-4 text-[#3A86FF]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z" />
@@ -281,10 +331,10 @@ const LandingSection: React.FC = () => {
             
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <svg className="w-12 h-12 mb-4 text-[#3A86FF]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z" />
@@ -310,10 +360,10 @@ const LandingSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Hardware Support</h4>
               <p>High performance computation with Core i9 Processors, 32GB RAM, NVIDIA QUADRO GPUs with secured network access over SSH. Other than that we also provide hardware support for AR/VR, IOT and BCI Applications</p>
@@ -330,10 +380,10 @@ const LandingSection: React.FC = () => {
             
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Software Support</h4>
               <p>Latest MATLAB support with complete toolkits as well full Anaconda distributions for Machine Learning and TensorFlow & PyTorch for Neural Networks and Deep Learning Applications</p>
@@ -347,10 +397,10 @@ const LandingSection: React.FC = () => {
             
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Cloud Support</h4>
               <p>Cloud computing support with Google Colab Pro Notebooks and Oracle Cloud Infrastructure for scalable and efficient data processing and storage solutions.</p>
@@ -364,10 +414,10 @@ const LandingSection: React.FC = () => {
             
             <motion.div 
               className="glass p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={glowingCardVariant}
             >
               <h4 className="text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-[#3A86FF] to-[#8338EC]">Knowledge Support</h4>
               <p>Professional body memberships along with MOOCS platform access for continuous learning and skill development in the latest technologies and methodologies.</p>
