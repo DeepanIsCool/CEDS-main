@@ -14,6 +14,10 @@ const TopBar: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="sticky top-0 z-50 py-3 px-4 md:px-8 flex justify-between items-center"
       opacity={scrollY > 50 ? 0.85 : 0.15}
+      style={{
+        boxShadow: `0 4px 20px -1px rgba(66, 133, 244, ${scrollY > 50 ? 0.4 : 0.2}), 
+                    0 2px 8px -1px rgba(131, 56, 236, ${scrollY > 50 ? 0.3 : 0.15})`,
+      }}
     >
       <motion.img 
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" 
@@ -42,5 +46,4 @@ const TopBar: React.FC = () => {
     </GlassPanel>
   );
 };
-
 export default TopBar;

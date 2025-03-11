@@ -18,6 +18,10 @@ const BottomNavbar: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
       className="py-4 px-4 md:px-8"
+      style={{
+        boxShadow: `0 -4px 20px -1px rgba(255, 0, 110, 0.3), 
+                   0 -2px 8px -1px rgba(131, 56, 236, 0.25)`
+      }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
