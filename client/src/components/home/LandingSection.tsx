@@ -101,7 +101,7 @@ const LandingSection: React.FC = () => {
               >
                 <GlassPanel className="w-full h-auto rounded-xl shadow-xl relative z-10 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" 
+                    src="https://interestingengineering.com/_next/image?url=https%3A%2F%2Fimages.interestingengineering.com%2F2023%2F12%2F17%2Fimage%2Fjpeg%2FvuPe0eeWZY8i7TszVtG2RMMRLw14TK95viZVkOkX.jpg&w=1200&q=75" 
                     alt="Data visualization" 
                     className="w-full h-auto object-cover"
                   />
